@@ -6,25 +6,25 @@ _base_ = [
 ]
 
 # dataset settings
-icdar2015_textdet_train = _base_.icdar2015_textdet_train
-icdar2015_textdet_train.pipeline = _base_.train_pipeline
-icdar2015_textdet_test = _base_.icdar2015_textdet_test
-icdar2015_textdet_test.pipeline = _base_.test_pipeline
+cocotextv2_textdet_train = _base_.cocotextv2_textdet_train
+cocotextv2_textdet_train.pipeline = _base_.train_pipeline
+cocotextv2_textdet_test = _base_.cocotextv2_textdet_test
+cocotextv2_textdet_test.pipeline = _base_.test_pipeline
 
 train_dataloader = dict(
-    batch_size=16,
+    batch_size=4,
     num_workers=8,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=True),
-    dataset=icdar2015_textdet_train)
+    dataset=cocotextv2_textdet_train)
 
 val_dataloader = dict(
     batch_size=1,
     num_workers=4,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),
-    dataset=icdar2015_textdet_test)
+    dataset=cocotextv2_textdet_test)
 
 test_dataloader = val_dataloader
 
-auto_scale_lr = dict(base_batch_size=16)
+auto_scale_lr = dict(base_batch_size=4)
