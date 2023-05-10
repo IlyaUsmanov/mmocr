@@ -10,6 +10,6 @@ cocotextv2_textdet_train = dict(
 cocotextv2_textdet_test = dict(
     type='OCRDataset',
     data_root=cocotextv2_textdet_data_root,
-    ann_file='textdet_test.json',
+    ann_file='textdet_val.json',
     test_mode=True,
     pipeline=None)
