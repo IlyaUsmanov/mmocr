@@ -10,7 +10,7 @@ default_hooks = dict(
     timer=dict(type='IterTimerHook'),
     logger=dict(type='LoggerHook', interval=5),
     param_scheduler=dict(type='ParamSchedulerHook'),
-    checkpoint=dict(type='CheckpointHook', interval=20),
+    checkpoint=dict(type='CheckpointHook', interval=2000),
     sampler_seed=dict(type='DistSamplerSeedHook'),
     sync_buffer=dict(type='SyncBuffersHook'),
     visualization=dict(
