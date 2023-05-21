@@ -10,7 +10,7 @@ cocotextv2_textdet_train.pipeline = _base_.train_pipeline
 cocotextv2_textdet_test = _base_.cocotextv2_textrecog_test
 cocotextv2_textdet_test.pipeline = _base_.test_pipeline
 
-default_hooks = dict(logger=dict(type='LoggerHook', interval=50), )
+default_hooks = dict(logger=dict(type='LoggerHook', interval=5000), )
 train_dataloader = dict(
     batch_size=4,
     num_workers=8,
