@@ -1,7 +1,8 @@
 dictionary = dict(
     type='Dictionary',
     dict_file='{{ fileDirname }}/../../../dicts/english_digits_symbols_space.txt',
-    with_padding=True)
+    with_padding=True,
+    with_unknown=True)
 
 model = dict(
     type='CRNN',
