@@ -12,7 +12,7 @@ cocotextv2_textdet_test.pipeline = _base_.test_pipeline
 
 default_hooks = dict(logger=dict(type='LoggerHook', interval=5000), )
 train_dataloader = dict(
-    batch_size=4,
+    batch_size=32,
     num_workers=8,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=True),
@@ -28,4 +28,8 @@ test_dataloader = dict(
 
 val_dataloader = test_dataloader
 
-auto_scale_lr = dict(base_batch_size=4 * 4)
+val_evaluator = dict(
+    dataset_prefixes=['COCO'])
+test_evaluator = val_evaluator
+
+auto_scale_lr = dict(base_batch_size=32 * 4)
