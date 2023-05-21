@@ -12,7 +12,7 @@ cocotextv2_textdet_test = _base_.cocotextv2_textdet_test
 cocotextv2_textdet_test.pipeline = _base_.test_pipeline
 
 train_dataloader = dict(
-    batch_size=4,
+    batch_size=16,
     num_workers=8,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=True),
